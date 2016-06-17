@@ -12,6 +12,8 @@ class ViewController: UIViewController, UITableViewDelegate {
     
     var lapTime = [Double]()
     
+    var timer = NSTimer()
+    
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
