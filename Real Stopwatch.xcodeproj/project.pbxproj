@@ -12,10 +12,10 @@
 		D52AE82E1D0F657400F62AC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D52AE82C1D0F657400F62AC1 /* Main.storyboard */; };
 		D52AE8301D0F657400F62AC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D52AE82F1D0F657400F62AC1 /* Assets.xcassets */; };
 		D52AE8331D0F657400F62AC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D52AE8311D0F657400F62AC1 /* LaunchScreen.storyboard */; };
-		D52AE8491D109AB100F62AC1 /* greenCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = D52AE8451D109AB100F62AC1 /* greenCircle.png */; };
-		D52AE84A1D109AB100F62AC1 /* lapCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = D52AE8461D109AB100F62AC1 /* lapCircle.png */; };
-		D52AE84B1D109AB100F62AC1 /* redCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = D52AE8471D109AB100F62AC1 /* redCircle.png */; };
-		D52AE84C1D109AB100F62AC1 /* resetCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = D52AE8481D109AB100F62AC1 /* resetCircle.png */; };
+		D52AE8561D146FA700F62AC1 /* startButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D52AE8551D146FA700F62AC1 /* startButton.png */; };
+		D52AE8581D14723500F62AC1 /* stopButon.png in Resources */ = {isa = PBXBuildFile; fileRef = D52AE8571D14723500F62AC1 /* stopButon.png */; };
+		D52AE85A1D14741B00F62AC1 /* lapButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D52AE8591D14741B00F62AC1 /* lapButton.png */; };
+		D52AE85C1D14742A00F62AC1 /* resetButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D52AE85B1D14742A00F62AC1 /* resetButton.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,10 +26,10 @@
 		D52AE82F1D0F657400F62AC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D52AE8321D0F657400F62AC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D52AE8341D0F657400F62AC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D52AE8451D109AB100F62AC1 /* greenCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenCircle.png; sourceTree = "<group>"; };
-		D52AE8461D109AB100F62AC1 /* lapCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lapCircle.png; sourceTree = "<group>"; };
-		D52AE8471D109AB100F62AC1 /* redCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redCircle.png; sourceTree = "<group>"; };
-		D52AE8481D109AB100F62AC1 /* resetCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resetCircle.png; sourceTree = "<group>"; };
+		D52AE8551D146FA700F62AC1 /* startButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startButton.png; sourceTree = "<group>"; };
+		D52AE8571D14723500F62AC1 /* stopButon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stopButon.png; sourceTree = "<group>"; };
+		D52AE8591D14741B00F62AC1 /* lapButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lapButton.png; sourceTree = "<group>"; };
+		D52AE85B1D14742A00F62AC1 /* resetButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resetButton.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,10 +76,10 @@
 		D52AE83A1D0F684600F62AC1 /* Button Images */ = {
 			isa = PBXGroup;
 			children = (
-				D52AE8481D109AB100F62AC1 /* resetCircle.png */,
-				D52AE8471D109AB100F62AC1 /* redCircle.png */,
-				D52AE8461D109AB100F62AC1 /* lapCircle.png */,
-				D52AE8451D109AB100F62AC1 /* greenCircle.png */,
+				D52AE8551D146FA700F62AC1 /* startButton.png */,
+				D52AE8571D14723500F62AC1 /* stopButon.png */,
+				D52AE8591D14741B00F62AC1 /* lapButton.png */,
+				D52AE85B1D14742A00F62AC1 /* resetButton.png */,
 			);
 			name = "Button Images";
 			sourceTree = "<group>";
@@ -142,13 +142,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D52AE85C1D14742A00F62AC1 /* resetButton.png in Resources */,
+				D52AE8561D146FA700F62AC1 /* startButton.png in Resources */,
 				D52AE8331D0F657400F62AC1 /* LaunchScreen.storyboard in Resources */,
-				D52AE8491D109AB100F62AC1 /* greenCircle.png in Resources */,
-				D52AE84A1D109AB100F62AC1 /* lapCircle.png in Resources */,
-				D52AE84B1D109AB100F62AC1 /* redCircle.png in Resources */,
 				D52AE8301D0F657400F62AC1 /* Assets.xcassets in Resources */,
-				D52AE84C1D109AB100F62AC1 /* resetCircle.png in Resources */,
+				D52AE85A1D14741B00F62AC1 /* lapButton.png in Resources */,
 				D52AE82E1D0F657400F62AC1 /* Main.storyboard in Resources */,
+				D52AE8581D14723500F62AC1 /* stopButon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
