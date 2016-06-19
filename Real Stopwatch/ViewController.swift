@@ -17,6 +17,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var seconds: Int = 0
     var fractions: Int = 0
     
+    //To store and keep track of all the laps
+    var laps = [String]()
+    
+    //This will hold the minutes, seconds, and fractions together in one string
+    var stopwatchString = ""
+    
     //Boolean variables to tell whether the app has started and if any laps has been added
     var startStopwatch: Bool = false
     var addLap: Bool = false
@@ -62,7 +68,40 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBAction func lapReset(sender: AnyObject) {
     
-        
+        if addLap == true {
+            
+            //Append the current stopwatch value whenever lap is clicked
+            laps.insert(stopwatchString, atIndex: 0)
+            
+            //Update the table view to display new data being added
+            lapsTableView.reloadData()
+            
+        }else {
+            
+            //Set addLap to false when reset is clicked
+            addLap = false
+            
+            //Update the image when reset is clicked
+            lapResetButton.setImage(UIImage(named: "lapButton.png"), forState: .Normal)
+            
+            //Reset minutes, seconds, and fractions to 0
+            fractions = 0
+            seconds = 0
+            minutes = 0
+            
+            //The new stopwatch value once reset is clicked
+            stopwatchString = "00:00.00"
+            
+            //Update the label according to the stopwatchString
+            stopwatchLabel.text = stopwatchString
+            
+            //Empty out the laps array once reset is clicked
+            laps.removeAll()
+            
+            //Update the table view
+            lapsTableView.reloadData()
+            
+        }
         
     }
     
@@ -93,15 +132,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let secondsString = seconds > 9 ? "\(seconds)" : "0\(seconds)"
         let minutesString = minutes > 9 ? "\(minutes)" : "0\(minutes)"
         
+        //Store the values for mniutes, seconds, and fractions in one string as the stopwatch label
+        stopwatchString = "\(minutesString):\(secondsString).\(fractionsString)"
+        
         //Update the stopwatchLabel
-        stopwatchLabel.text = "\(minutesString):\(secondsString).\(fractionsString)"
+        stopwatchLabel.text = stopwatchString
         
     }
     
     //Determines how many rows the table view should have
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-       return 3
+       
+       //The number of rows in the table view must equal the amount of elements in the laps array
+       return laps.count
         
     }
     
@@ -111,8 +154,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //Use Value1 to align "Lap" on the left side of the cell and it value on the right side of the cell and set background color of the cells to the background color of the viewController
         let cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "Cell")  //Same reuseIdentifier as on Main.storyboard 
         cell.backgroundColor = self.view.backgroundColor
-        cell.textLabel?.text = "Lap" //Cell text value
-        cell.detailTextLabel?.text = "00:00:00"   //Cell detail value
+        cell.textLabel?.text = "Lap \(laps.count - indexPath.row)" //Cell text value
+        cell.detailTextLabel?.text = laps[indexPath.row]   //Cell detail value
         return cell
         
     }
