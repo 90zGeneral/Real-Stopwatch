@@ -72,7 +72,7 @@
                         <outlet property="lapResetButton" destination="ME8-bx-3fl" id="zf0-Ts-3Tq"/>
                         <outlet property="lapsTableView" destination="fZr-dO-OBb" id="nyO-0V-7y5"/>
                         <outlet property="startStopButton" destination="kLG-4P-8Hb" id="EVh-S7-ZCu"/>
-                        <outlet property="timerLabel" destination="X1s-Wr-XMn" id="v4I-Qq-dXf"/>
+                        <outlet property="stopwatchLabel" destination="X1s-Wr-XMn" id="z2v-va-8jo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
