@@ -9,7 +9,7 @@
 import UIKit
 
 //Allows the view controller to be responsible for the table view
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate {
     
     //Create all the necessary variables for each component of the app
     var timer = NSTimer()
@@ -74,7 +74,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBAction func lapReset(sender: AnyObject) {
     
-        if addLap == true {
+        if addLap {
             
             //Append the current lapString value whenever lap is clicked
             laps.insert(lapString, atIndex: 0)
