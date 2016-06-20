@@ -38,6 +38,7 @@ class ViewController: UIViewController, UITableViewDelegate {
     @IBOutlet var lapsTableView: UITableView!
     @IBOutlet var startStopButton: UIButton!
     @IBOutlet var lapResetButton: UIButton!
+    @IBOutlet var lapTimeLabel: UILabel!
     
     //To determine what the startStop button should do when it is clicked
     @IBAction func startStop(sender: AnyObject) {
@@ -104,13 +105,14 @@ class ViewController: UIViewController, UITableViewDelegate {
             lapFractions = 0
             lapSeconds = 0
             lapMinutes = 0
-            lapString = ""
             
-            //The new stopwatch value once reset is clicked
+            //Reset once reset is clicked
             stopwatchString = "00:00.00"
+            lapString = "00:00.00"
             
-            //Update the label according to the stopwatchString
+            //Update the labels according to the stopwatchString and lapString
             stopwatchLabel.text = stopwatchString
+            lapTimeLabel.text = lapString
             
             //Empty out the laps array once reset is clicked
             laps.removeAll()
@@ -177,8 +179,9 @@ class ViewController: UIViewController, UITableViewDelegate {
         //Store the values for lapMinutes, lapSeconds, and lapFractions in one string
         lapString = "\(lapMinutesString):\(lapSecondsString).\(lapFractionsString)"
         
-        //Update the stopwatchLabel
+        //Update the stopwatchLabel and lapTimeLabel
         stopwatchLabel.text = stopwatchString
+        lapTimeLabel.text = lapString
         
     }
     
@@ -206,8 +209,10 @@ class ViewController: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        //To determine what value the stopwatch label takes when the app is first loaded
+        //To determine what value the stopwatchLabel and lapTimeLabel take when the app is first loaded
         stopwatchLabel.text = "00:00.00"
+        lapTimeLabel.text = "00:00.00"
+        
         
     }
 
