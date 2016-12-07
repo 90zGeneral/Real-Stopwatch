@@ -12,7 +12,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate {
     
     //Create all the necessary variables for each component of the app
-    var timer = NSTimer()
+    var timer = Timer()
     var minutes: Int = 0
     var seconds: Int = 0
     var fractions: Int = 0
@@ -41,21 +41,21 @@ class ViewController: UIViewController, UITableViewDelegate {
     @IBOutlet var lapTimeLabel: UILabel!
     
     //To determine what the startStop button should do when it is clicked
-    @IBAction func startStop(sender: AnyObject) {
+    @IBAction func startStop(_ sender: AnyObject) {
         
         //Only run this statement if startStopwatch is false
         if !startStopwatch {
             
             //Timer to call the updateStopwatch function every 0.01 second
-            timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: #selector(ViewController.updateStopwatch), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(ViewController.updateStopwatch), userInfo: nil, repeats: true)
             
             //Reset startStopwatch and addLap to true
             startStopwatch = true
             addLap = true
             
             //To reset the images of each button while stopwatch is running
-            startStopButton.setImage(UIImage(named: "stopButon.png"), forState: UIControlState.Normal)
-            lapResetButton.setImage(UIImage(named: "lapButton.png"), forState: UIControlState.Normal)
+            startStopButton.setImage(UIImage(named: "stopButon.png"), for: UIControlState())
+            lapResetButton.setImage(UIImage(named: "lapButton.png"), for: UIControlState())
     
         }else {
             //Stop the timer
@@ -66,19 +66,19 @@ class ViewController: UIViewController, UITableViewDelegate {
             addLap = false
             
             //To reset the images of each button while stopwatch has been stopped
-            startStopButton.setImage(UIImage(named: "startButton.png"), forState: .Normal)
-            lapResetButton.setImage(UIImage(named: "resetButton.png"), forState: .Normal)
+            startStopButton.setImage(UIImage(named: "startButton.png"), for: UIControlState())
+            lapResetButton.setImage(UIImage(named: "resetButton.png"), for: UIControlState())
     
         }
         
     }
     
-    @IBAction func lapReset(sender: AnyObject) {
+    @IBAction func lapReset(_ sender: AnyObject) {
     
         if addLap {
             
             //Append the current lapString value whenever lap is clicked
-            laps.insert(lapString, atIndex: 0)
+            laps.insert(lapString, at: 0)
             
             //Update the table view to display new data being added
             lapsTableView.reloadData()
@@ -94,7 +94,7 @@ class ViewController: UIViewController, UITableViewDelegate {
             addLap = false
             
             //Update the image when reset is clicked
-            lapResetButton.setImage(UIImage(named: "lapButton.png"), forState: .Normal)
+            lapResetButton.setImage(UIImage(named: "lapButton.png"), for: UIControlState())
             
             //Reset minutes, seconds, and fractions to 0
             fractions = 0
@@ -186,7 +186,7 @@ class ViewController: UIViewController, UITableViewDelegate {
     }
     
     //Determines how many rows the table view should have
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        
        //The number of rows in the table view must equal the amount of elements in the laps array
        return laps.count
@@ -194,10 +194,10 @@ class ViewController: UIViewController, UITableViewDelegate {
     }
     
     //Responsible for the content and values within the cells
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
         
         //Use Value1 to align "Lap" on the left side of the cell and it value on the right side of the cell and set background color of the cells to the background color of the viewController
-        let cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "Cell")  //Same reuseIdentifier as on Main.storyboard 
+        let cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "Cell")  //Same reuseIdentifier as on Main.storyboard 
         cell.backgroundColor = self.view.backgroundColor
         cell.textLabel?.text = "Lap \(laps.count - indexPath.row)"       //Cell text value
         cell.detailTextLabel?.text = laps[indexPath.row]                 //Cell detail value
